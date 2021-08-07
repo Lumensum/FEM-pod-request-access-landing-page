@@ -34,20 +34,6 @@ body {
   background-color: var(--clr-darkest);
 }
 
-.main::before {
-  content: "";
-  position: absolute;
-  background-image: url(./assets/mobile/image-host.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  opacity: 0.1;
-}
-
 /* ========== HEADER ========== */
 
 .header {
@@ -62,6 +48,20 @@ body {
 
 .main {
   margin: 24px;
+}
+
+.main::before {
+  content: "";
+  position: absolute;
+  background-image: url(./assets/mobile/image-host.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
 }
 
 .main__title {
@@ -164,6 +164,7 @@ body {
   flex: 1 1 100%;
   width: 100%;
   text-transform: capitalize;
+  cursor: pointer;
 }
 
 .form__button:hover {
@@ -176,4 +177,64 @@ body {
   font-size: 12px;
   line-height: 14px;
   color: var(--clr-error);
+}
+
+/* ========== MEDIA QUERIES ========== */
+
+/* ---------- MEDIA QUERY: TABLET ---------- */
+@media screen and (min-width: 650px) {
+  .header {
+    margin: 50px auto auto 39px;
+    display: block;
+  }
+
+  .main {
+    background-color: var(--clr-darkest);
+    margin: 145px 94px auto 39px;
+    height: 509px;
+  }
+
+  .main::before {
+    content: "";
+    position: absolute;
+    background-image: url(./assets/tablet/image-host.jpg);
+    background-size: auto;
+    background-position-x: right;
+    opacity: 1;
+  }
+
+  .main__title {
+    text-align: left;
+    font-size: 48px;
+    line-height: 56px;
+    padding-top: 93px;
+    margin-bottom: 31px;
+  }
+
+  .main__description {
+    font-size: 18px;
+    line-height: 28px; /* or 167% */
+    text-align: left;
+    margin-bottom: 40px;
+    margin-right: 190px;
+  }
+
+  .main__form {
+    margin-right: 190px;
+    flex-direction: row;
+  }
+
+  .form__input {
+    margin-bottom: 0px;
+    position: relative;
+    height: 56px;
+  }
+
+  .form__button {
+    position: absolute;
+    width: auto;
+  }
+  .form__error {
+    transform: translateY(40px) translateX(-390%);
+  }
 }
